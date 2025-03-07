@@ -1,16 +1,16 @@
 from moviepy.editor import *
 
-clip=VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip.mp4")
-clip2=VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip2.mp4")
-clip3=VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip3.mp4")
+clip=VideoFileClip("clip.mp4")
+clip2=VideoFileClip("clip2.mp4")
+clip3=VideoFileClip("clip3.mp4")
 
-aclip=AudioFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\aclip.mp3")
-aclip2=AudioFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\aclip2.mp3")
-aclip3=AudioFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\aclip3.mp3")
+aclip=AudioFileClip("aclip.mp3")
+aclip2=AudioFileClip("aclip2.mp3")
+aclip3=AudioFileClip("aclip3.mp3")
 
 def rotate():               #contains rotating,downsizing,adding margin
     clip1 = VideoFileClip("clip.mp4") # add 10px contour(margin like)
-    rot=int(input("do u want to rotate the video along 1)x-axisc2)y-axis\n 3)x \nand y-axis"))
+    rot=int(input("do u want to rotate the video along 1)x-axisc \n2)y-axis \n3)x \nand y-axis\n"))
     if rot==1:
         clip2 = clip1.fx( vfx.mirror_x)
         final_clip = clips_array([[clip1, clip2]])
@@ -39,16 +39,16 @@ def volchange():
 def addoverlay():
     start=input("enter the starting tinme in s\n")
     end=input("enter the endtime in s \n")
-    clip = VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip.mp4").subclip(start,end)
+    clip = VideoFileClip("clip.mp4").subclip(start,end)
     txt_clip = TextClip("bharath",fontsize=70,color='white')   #error as not able to import *
     txt_clip = txt_clip.set_pos('center').set_duration(10)
     clip = CompositeVideoClip([clip, txt_clip])
     clip.write_videofile("myHolidays_edited.webm")
 
 def concatenaite():
-    clip1 = VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip.mp4")
-    clip2 = VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip2.mp4")        #change names here
-    clip3 = VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip3.mp4")
+    clip1 = VideoFileClip("clip.mp4")
+    clip2 = VideoFileClip("clip2.mp4")        #change names here
+    clip3 = VideoFileClip("clip3.mp4")
     final_clip = concatenate_videoclips([clip1,clip2,clip3])
     final_clip.write_videofile("my_concatenation.mp4")
 
@@ -64,9 +64,9 @@ def delay():
     final_clip.write_videofile("delay_clip.mp4")
 
 def crossfade():
-    clip=VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip.mp4")
-    clip2=VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip2.mp4")
-    clip3=VideoFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\clip3.mp4")
+    clip=VideoFileClip("clip.mp4")
+    clip2=VideoFileClip("clip2.mp4")
+    clip3=VideoFileClip("clip3.mp4")
     str=int(input("enter the delay time for clip2\n"))
     str2=int(input("enter the delaytime for clip3\n"))
     crsfd1=int(input("enter the crossfade period for clip2\n"))
@@ -85,9 +85,9 @@ def positioning():
 
 
 def audioedit():
-    aclip=AudioFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\aclip.mp3")
-    aclip2=AudioFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\aclip2.mp3")
-    aclip3=AudioFileClip("C:\\Users\\Bharath K\\Documents\\video editor\\aclip3.mp3")
+    aclip=AudioFileClip("aclip.mp3")
+    aclip2=AudioFileClip("aclip2.mp3")
+    aclip3=AudioFileClip("aclip3.mp3")
     v1=int(input("enter the volume change'%' for clip1\n "))
     v1p=v1/100
     s2=int(input("enter the start time for clip2\n"))
